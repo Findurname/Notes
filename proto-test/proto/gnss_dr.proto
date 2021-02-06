@@ -1,0 +1,22 @@
+syntax = "proto2";
+
+package rochy.drivers.gnss;
+
+
+import "header.proto";
+
+message GnssDr {
+  optional rochy.common.Header header = 1;
+
+  optional uint64 utc_time_ms = 2;
+  optional double latitude  = 3;
+  optional double longitude = 4;
+  optional double altitude = 5;
+
+  optional float speed = 6;
+  optional float bearing = 7;// uint is degree
+  optional float bearing_accuracy = 8;// uint is degree
+  optional double pitch = 9;// uint is degree
+  optional double pitch_accuracy = 10; // uint is degree
+  optional uint32 horizontal_accuracy = 11; // uint is mm
+}

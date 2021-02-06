@@ -1,0 +1,12 @@
+syntax = "proto2";
+
+package rochy.radar;
+
+message RadarToCameraConfig{
+ 	optional double tx = 1 [default = 0.0];
+  optional double ty = 2 [default = 0.0];
+  optional double tz = 3 [default = 0.0];
+  optional double yaw = 4 [default = 0.0];
+	optional double roll = 5 [default = 0.0];
+	optional double pitch = 6 [default = 0.0];
+}

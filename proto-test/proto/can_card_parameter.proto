@@ -1,0 +1,57 @@
+syntax = "proto2";
+
+package rochy.canif;
+
+
+enum CANChannelId {
+    CHANNEL_ID_ZERO = 0;
+    CHANNEL_ID_ONE = 1;
+    CHANNEL_ID_TWO = 2;
+    CHANNEL_ID_THREE = 3;
+}
+message CanIdFilter {
+  optional uint32 canid = 1 ;
+  optional uint32 chnum = 2 ;
+  optional bool enabled = 3 [default = true];
+}
+
+message CANBitrateParameter {
+  optional CANChannelId chnum = 1;
+  optional uint32 bitrate = 2 [default = 500000];
+}
+
+message QLOLSpiCanParameter {
+  optional uint32 spipair_mcutick = 1 [default = 500];
+  repeated CANBitrateParameter bitrate_parameter = 3;
+  repeated CanIdFilter canidfilter_list  = 2;
+}
+
+message CANCardParameter {
+  enum CANCardBrand {
+    FAKE_CAN = 0;
+    ESD_CAN = 1;
+    SOCKET_CAN_RAW = 2;
+    QLOL_SPICAN_RAW = 3;
+    QLOL_SPI_MCU_CAN = 4;
+  }
+  enum CANCardType {
+    PCI_CARD = 0;
+    USB_CARD = 1;
+    SPI_CARD = 2;
+  }
+  enum CANCardWorkMode {
+    REVICE_ONLY = 0;
+    SEND_ONLY = 1;
+    BOTH = 2;
+  }
+  optional CANCardBrand brand = 1;
+  optional CANCardType type = 2;
+  optional CANCardWorkMode work_mode = 3;
+  optional QLOLSpiCanParameter qlol_spican_parameter = 4;
+  optional CANChannelId channel_id = 5;
+  optional uint32 bitrate = 6 [default = 500000];
+  optional float min_send_message_interval = 7 [default = 0.01];
+  optional bool start_send_thread = 8 [default = true];
+  optional float min_receive_message_interval = 9 [default = 0.01];
+  optional bool start_receive_thread = 10 [default = true];
+}

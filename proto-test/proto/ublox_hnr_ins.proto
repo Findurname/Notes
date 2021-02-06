@@ -1,0 +1,17 @@
+syntax = "proto2";
+
+package rochy.DataFusion;
+
+import "header.proto";
+
+message UbloxHnrIns {  
+    optional rochy.common.Header header = 1;  
+    
+    optional uint64 utc_time_ms = 2;  
+    optional double x_ang_rate  = 3;  
+    optional double y_ang_rate = 4;  
+    optional double z_ang_rate = 5;  
+    optional double xaccel = 6;  
+    optional double yaccel = 7; //  
+    optional double zaccel = 8; //
+}
