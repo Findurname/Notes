@@ -1,0 +1,9 @@
+syntax = "proto2";
+
+message ShortMessage {
+    required string content = 2;
+}
+
+message Counter {
+    required uint64 count = 1 [default = 0];
+}
