@@ -1,0 +1,4 @@
+
+
+## X86平台编译说明
+http://192.168.0.180:10080/Nebula/EHPEngine/wikis/X86%E5%B9%B3%E5%8F%B0%E7%BC%96%E8%AF%91%E8%AF%B4%E6%98%8E
