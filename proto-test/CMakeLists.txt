@@ -3,9 +3,9 @@ project(proto-test)
 
 
 
-set(Protobuf_INSTALL_PATH "/usr/local/protobuf/")
+# set(Protobuf_INSTALL_PATH "/usr/local/protobuf/")
 # set(Protobuf_INSTALL_PATH "/home/jerry/protobuf-3.14.0/cmake/release")
-# set(Protobuf_INSTALL_PATH "/home/jerry/S32V/S32_x86/Install/Host")
+set(Protobuf_INSTALL_PATH "/home/jerry/S32V/S32_x86/Install/Host")
 
 set(Protobuf_PREFIX_PATH
 "${Protobuf_INSTALL_PATH}/include"
@@ -38,8 +38,8 @@ message(STATUS "================== HEAD_DIR is: ${HDRS}")
 #   chatter.proto
 # )
 
-
-list(APPEND PROTO_MSGS "${CMAKE_CURRENT_SOURCE_DIR}/proto/chatter.proto")
+file(GLOB PROTO_MSGS ${CMAKE_CURRENT_SOURCE_DIR}/proto/*.proto)
+# list(APPEND PROTO_MSGS "${CMAKE_CURRENT_SOURCE_DIR}/proto/chatter.proto")
 # list(APPEND PROTO_MSGS "${CMAKE_CURRENT_SOURCE_DIR}/proto/BarPlus.proto")
 protobuf_generate_cpp(PROTO_SRCS PROTO_HDRS ${PROTO_MSGS})
 # list(APPEND ${HDRS} ${PROTO_HDRS})
