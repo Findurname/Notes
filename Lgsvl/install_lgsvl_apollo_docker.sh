@@ -118,3 +118,15 @@ cyber_visualizer
 rosparam set /use_sim_time false
 #播放时
 rosparam set /use_sim_time true
+
+
+
+
+## ROS
+
+## The simulator uses rosbridge to connect to ROS. Once rosbridge is installed, launch it and you should have a connection to ROS.
+## To launch the bridge you can use:
+## https://github.com/lgsvl/lanefollowing
+## https://github.com/lgsvl/simulator/issues/3
+## https://github.com/RobotWebTools/rosbridge_suite
+roslaunch rosbridge_server rosbridge_websocket.launch
