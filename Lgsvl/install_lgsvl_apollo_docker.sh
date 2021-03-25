@@ -113,7 +113,7 @@ cyber_visualizer
 
 
 ## Apollo 3.0
-
+./scripts/rosbridge.sh
 #录制前
 rosparam set /use_sim_time false
 #播放时
