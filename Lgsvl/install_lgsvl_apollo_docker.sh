@@ -85,8 +85,8 @@ http://localhost:8080
 bootstrap.sh
 bridge.sh
 
-
-
+./scripts/bootstrap_lgsvl.sh
+./scripts/bootstrap_lgsvl.sh stop
 
 
 ### Apollo demo:
