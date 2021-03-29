@@ -38,6 +38,8 @@ git clone --recurse-submodules https://github.com/lgsvl/apollo-5.0.git
 
 ## 进入docker:
 ./docker/scripts/dev_into.sh
+
+
 ## 编译, 会从git拉取仓库, 需要设置代理. docker里可以直接设置 export http_proxy
 # export http_proxy="127.0.0.1:7890"; export https_proxy=$http_proxy
 # 如果proxy无效， 则在/apollo/WORKSPACE.in里,第47到第53,替换成:
@@ -48,9 +50,13 @@ git clone --recurse-submodules https://github.com/lgsvl/apollo-5.0.git
 #     tag = "v1.1.0",
 #     remote = "https://gitee.com/audier0879/ad-rss-lib",
 # )
+# 需关闭 Settings -> Network -> Network Proxy
 ./apollo.sh build_gpu
 
+
+##############################################################
 ########## Launching Apollo alongside the simulator
+##############################################################
 ## To start Apollo:
 cd /apollo
 # bootstrap.sh
@@ -113,7 +119,10 @@ cyber_visualizer
 
 
 ## Apollo 3.0
+
+./scripts/bootstrap.sh
 ./scripts/rosbridge.sh
+
 #录制前
 rosparam set /use_sim_time false
 #播放时
