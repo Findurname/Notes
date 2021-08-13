@@ -16,6 +16,10 @@ bash download-frozen-image-v2.sh lgsvl-apollo-5.0 lgsvl/apollo-5.0:latest
 tar -cC 'lgsvl-apollo-5.0' . | docker load
 tar -cC 'apolloauto-apollo' . | docker load
 
+
+tar -cC 'lgsvl-apollo-3.0' . | docker load
+tar -cC 'apollo3.0' . | docker load
+
 ## 执行命令:
 ## https://github.com/lgsvl/apollo-5.0
 # 已下载到本地, 并加载
@@ -53,6 +57,8 @@ git clone --recurse-submodules https://github.com/lgsvl/apollo-5.0.git
 # 需关闭 Settings -> Network -> Network Proxy
 ./apollo.sh build_gpu
 
+# 编译apollo-3.0的时候， 需要
+# 需关闭 Settings -> Network -> Network Proxy
 
 ##############################################################
 ########## Launching Apollo alongside the simulator
