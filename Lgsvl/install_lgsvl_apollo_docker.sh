@@ -13,12 +13,17 @@
 bash download-frozen-image-v2.sh apolloauto-apollo apolloauto/apollo:dev-x86_64-18.04-20210126_2027
 bash download-frozen-image-v2.sh lgsvl-apollo-5.0 lgsvl/apollo-5.0:latest
 
+
+# 安装Apollo 5.0
 tar -cC 'lgsvl-apollo-5.0' . | docker load
 tar -cC 'apolloauto-apollo' . | docker load
 
-
+# 安装Apollo 3.0
+# Apollo 3.0 和 5.0只能存在一个最新的编译版本。不能共存。
 tar -cC 'lgsvl-apollo-3.0' . | docker load
 tar -cC 'apollo3.0' . | docker load
+
+
 
 ## 执行命令:
 ## https://github.com/lgsvl/apollo-5.0
