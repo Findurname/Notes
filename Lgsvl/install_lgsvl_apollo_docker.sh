@@ -13,6 +13,9 @@
 bash download-frozen-image-v2.sh apolloauto-apollo apolloauto/apollo:dev-x86_64-18.04-20210126_2027
 bash download-frozen-image-v2.sh lgsvl-apollo-5.0 lgsvl/apollo-5.0:latest
 
+# 安装Apollo(latest)
+tar -cC "apollo_20210517" . | docker load
+
 
 # 安装Apollo 5.0
 tar -cC 'lgsvl-apollo-5.0' . | docker load
@@ -126,7 +129,8 @@ cyber_record_car.sh
 
 ## Others
 cyber_visualizer
-
+cyber_channel list
+cyber_recorder record -a
 
 
 ## Apollo 3.0
