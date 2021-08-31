@@ -22,16 +22,24 @@ sudo apt-get install \
     software-properties-common -y
 
 ## Add Docker’s official GPG key:
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+# curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+
 
 ## Verify that you now have the key with the fingerprint 
 ## 9DC8 5822 9FC7 DD38 854A E2D8 8D81 803C 0EBF CD88, 
 ## by searching for the last 8 characters of the fingerprint.
 
-sudo add-apt-repository \
-   "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
-   $(lsb_release -cs) \
-   stable"
+# sudo add-apt-repository \
+#    "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+#    $(lsb_release -cs) \
+#    stable"
+
+
+## Aliyun
+curl -fsSL https://mirrors.aliyun.com/docker-ce/linux/ubuntu/gpg | sudo apt-key add -
+add-apt-repository "deb [arch=amd64] https://mirrors.aliyun.com/docker-ce/linux/ubuntu $(lsb_release -cs) stable"
+
+
 sudo apt-get update
 sudo apt-get install docker-ce docker-ce-cli containerd.io
 
@@ -43,11 +51,11 @@ sudo gpasswd -a ${USER} docker
 sudo service docker restart
 pkill X
 
-# 卸载Docker CE
-# 卸载Docker CE软件包：
-sudo apt-get purge docker-ce
-# 主机上的图像，容器，卷或自定义配置文件不会自动删除。要删除所有图像，容器和卷：
-sudo rm -rf /var/lib/docker
+## 卸载Docker CE
+## 卸载Docker CE软件包：
+# sudo apt-get purge docker-ce
+## 主机上的图像，容器，卷或自定义配置文件不会自动删除。要删除所有图像，容器和卷：
+# sudo rm -rf /var/lib/docker
 
 
 ############################ Docker CE 简易安装################################
