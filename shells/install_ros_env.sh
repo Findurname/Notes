@@ -5,3 +5,9 @@ sudo pip install catkin-tools
 sudo pip install rospkg
 pip install pycryptodomex
 pip install gnupg
+
+
+## turbo jpeg
+sudo pip install PyTurboJPEG
+
+

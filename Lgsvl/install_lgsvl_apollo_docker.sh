@@ -62,7 +62,7 @@ git clone --recurse-submodules https://github.com/lgsvl/apollo-5.0.git
 #     tag = "v1.1.0",
 #     remote = "https://gitee.com/audier0879/ad-rss-lib",
 # )
-# 需关闭 Settings -> Network -> Network Proxy
+# 需关闭 Settings -> Network -> Network Proxy(编译apollo3.0的时候，打开此处，来下载google_style仓库)
 ./apollo.sh build_gpu
 
 # 编译apollo-3.0的时候， 需要
@@ -143,7 +143,7 @@ rosparam set /use_sim_time false
 #播放时
 rosparam set /use_sim_time true
 
-
+rosbag play demo.bag --clock
 
 
 ## ROS
