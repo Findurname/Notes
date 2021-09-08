@@ -5,6 +5,11 @@ docker ps 列出当前运行的容器
 docker ps -a 列出所有的容器，包括运行的和不运行的
 docker rm container-id 删除某个容器
 
+## 删除镜像：
+
+docker system df -v
+docker rmi [OPTIONS] [IMAGEID]
+
 
 ## 2.容器的启动、进入、退出：
 

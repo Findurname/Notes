@@ -37,11 +37,11 @@ sudo apt-get install \
 
 ## Aliyun
 curl -fsSL https://mirrors.aliyun.com/docker-ce/linux/ubuntu/gpg | sudo apt-key add -
-add-apt-repository "deb [arch=amd64] https://mirrors.aliyun.com/docker-ce/linux/ubuntu $(lsb_release -cs) stable"
+sudo add-apt-repository "deb [arch=amd64] https://mirrors.aliyun.com/docker-ce/linux/ubuntu $(lsb_release -cs) stable"
 
 
 sudo apt-get update
-sudo apt-get install docker-ce docker-ce-cli containerd.io
+sudo apt-get install docker-ce docker-ce-cli containerd.io -y
 
 
 
@@ -49,7 +49,7 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io
 sudo groupadd docker 
 sudo gpasswd -a ${USER} docker
 sudo service docker restart
-pkill X
+# pkill X
 
 ## 卸载Docker CE
 ## 卸载Docker CE软件包：
@@ -60,9 +60,9 @@ pkill X
 
 ############################ Docker CE 简易安装################################
 
-curl https://get.docker.com | sh \
-  && sudo systemctl start docker \
-  && sudo systemctl enable docker
+# curl https://get.docker.com | sh \
+#   && sudo systemctl start docker \
+#   && sudo systemctl enable docker
 
 ############################ NV Docker ################################
 
@@ -80,7 +80,7 @@ sudo apt-get update
 sudo apt-get install -y nvidia-docker2
 sudo systemctl restart docker
 
-
+# pkill X
 #######################################################################
 
 
