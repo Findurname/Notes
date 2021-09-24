@@ -62,7 +62,11 @@ git clone --recurse-submodules https://github.com/lgsvl/apollo-5.0.git
 #     tag = "v1.1.0",
 #     remote = "https://gitee.com/audier0879/ad-rss-lib",
 # )
-# 需关闭 Settings -> Network -> Network Proxy(编译apollo3.0的时候，打开此处，来下载google_style仓库)
+# 需关闭 Settings -> Network -> Network Proxy
+## 修改hosts，以下载一些文件。
+# sudo vi /etc/hosts
+# 185.199.108.133 raw.githubusercontent.com
+
 ./apollo.sh build_gpu
 
 # 编译apollo-3.0的时候， 需要
